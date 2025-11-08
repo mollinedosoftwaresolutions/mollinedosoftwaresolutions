@@ -7,24 +7,23 @@ export async function GET() {
     { loc: `${baseUrl}/#contact`, priority: 0.8 },
   ];
 
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  ${urls
-    .map(
-      (url) => `
+${urls
+  .map(
+    (url) => `
   <url>
     <loc>${url.loc}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <priority>${url.priority}</priority>
-  </url>
-  `
-    )
-    .join("")}
+  </url>`
+  )
+  .join("")}
 </urlset>`;
 
-  return new Response(sitemap, {
+  return new Response(xml, {
     headers: {
-      "Content-Type": "application/xml",
+      "Content-Type": "application/xml; charset=utf-8",
     },
   });
 }
