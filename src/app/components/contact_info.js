@@ -30,10 +30,10 @@ export default function Contact() {
         <p className="text-gray-400">
           Or send an email to{" "}
           <a
-            href="mailto:mollinedowebservices@gmail.com"
+            href="mailto:mollinedosoftwaresolutions@gmail.com"
             className="text-blue-400 hover:text-blue-300 transition"
           >
-            mollinedowebservices@gmail.com
+            mollinedosoftwaresolutions@gmail.com
           </a>
         </p>
       </motion.div>
